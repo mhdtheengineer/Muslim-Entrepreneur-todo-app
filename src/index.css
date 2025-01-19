@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+@layer base {
+  body {
+    @apply bg-[#FBF7F0];
+    font-family: 'Amiri', serif;
+  }
+}
+
+@layer components {
+  .timeline {
+    @apply relative;
+  }
+
+  .timeline::before {
+    content: '';
+    @apply absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-600 to-emerald-600 opacity-30;
+  }
+
+  .time-block {
+    @apply relative pl-12 transition-all;
+  }
+  
+  .time-block::before {
+    content: '';
+    @apply absolute left-3 top-6 h-3 w-3 rounded-full bg-emerald-600 border-2 border-white shadow-md z-10;
+  }
+  
+  .time-block.current::before {
+    @apply bg-emerald-500 animate-pulse;
+  }
+
+  .sleep-shade {
+    @apply relative bg-gradient-to-r from-indigo-50/80 to-purple-50/80 backdrop-blur-sm rounded-lg;
+  }
+
+  .sleep-shade::before {
+    content: '🌙';
+    @apply absolute -left-8 top-1/2 transform -translate-y-1/2 text-xl;
+  }
+
+  .rule-321 {
+    @apply bg-gradient-to-r from-amber-50/60 to-orange-50/60 backdrop-blur-sm rounded-lg p-4 mt-4;
+  }
+
+  .arabic-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L45 30L30 60L15 30z' fill='%23047857' fill-opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  .prayer-card {
+    @apply bg-white/90 rounded-lg shadow-md p-6 backdrop-blur-sm border border-emerald-100;
+  }
+
+  .tasbih-counter {
+    @apply flex items-center justify-between p-3 bg-emerald-50 rounded-lg mb-2 text-emerald-700;
+  }
+
+  .mosque-reminder {
+    @apply bg-gradient-to-r from-emerald-50 to-teal-50 p-4 rounded-lg shadow-sm mt-4 flex items-center gap-3;
+  }
+
+  .next-prayer {
+    @apply bg-gradient-to-br from-emerald-500 to-emerald-600 text-white p-4 rounded-lg shadow-md;
+  }
+
+  .islamic-pattern-divider {
+    @apply h-px w-full my-4 bg-gradient-to-r from-transparent via-emerald-200 to-transparent opacity-50;
+  }
+
+  .current-time-line {
+    @apply absolute left-4 right-0 h-0.5 bg-emerald-500/20;
+  }
+}
